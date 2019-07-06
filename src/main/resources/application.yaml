@@ -1,0 +1,83 @@
+info:
+  app:
+    name: server-demo
+    version: 0.0.1
+
+output:
+  ansi:
+    enabled: ALWAYS # 输出带颜色的日志信息
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+
+server:
+  port:
+  address:
+  servlet:
+    context-path: /
+    session:
+      timeout: 30m
+  tomcat:
+    uri-encoding: utf-8
+
+spring:
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true
+  http:
+    encoding:
+      charset: utf-8
+      enabled: true
+      force: true
+  mvc:
+    date-format: yyyy-MM-dd
+    throw-exception-if-no-handler-found: true # 出现错误时, 直接抛出异常
+  resources:
+    add-mappings: false # 不要为我们工程中的资源文件建立映射
+  jackson:
+    date-format: java.text.SimpleDateFormat
+    time-zone: GMT+8
+    serialization.indent_output: true
+  session:
+    store-type: redis
+    #    timeout:
+    redis:
+      flush-mode: on_save
+  datasource:
+    name: MySQL
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://172.16.34.251:3306/answerduel?characterEncoding=UTF-8&useUnicode=true&useSSL=false&serverTimezone=UTC&autoReconnect=true&amp;
+    username: root
+    password: root
+    sql-script-encoding: utf-8
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 15
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: DatebookHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+  jpa:
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    generate-ddl: true
+    open-in-view: true
+  redis:
+    host:
+    port:
+    password:
+    database:
+    ssl: false
+    timeout: 30s
+
+snowflake:
+  workerId: 0
+  datacenterId: 0

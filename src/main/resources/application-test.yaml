@@ -1,0 +1,20 @@
+logging:
+  level: debug
+
+server:
+  port: 80
+#  address: 127.0.0.1
+
+spring:
+  datasource:
+    url:
+    username:
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: none
+  redis:
+    host:
+    port:
+    password:
+    database:

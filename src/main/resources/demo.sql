@@ -1,0 +1,21 @@
+CREATE TABLE sys_account (
+  id bigint(20) NOT NULL COMMENT '',
+  avatar_base64 varchar(255) DEFAULT NULL COMMENT '',
+  birthday datetime DEFAULT NULL COMMENT '',
+  email varchar(255) DEFAULT NULL COMMENT '',
+  gender int(11) DEFAULT NULL COMMENT '',
+  level_type int(11) DEFAULT NULL COMMENT '',
+  nickname varchar(255) DEFAULT NULL COMMENT '',
+  password varchar(255) DEFAULT NULL COMMENT '',
+  phone_number varchar(255) DEFAULT NULL COMMENT '',
+  realname varchar(255) DEFAULT NULL COMMENT '',
+  salt varchar(255) DEFAULT NULL COMMENT '',
+  username varchar(255) DEFAULT NULL COMMENT '',
+  state int(11) DEFAULT NULL COMMENT '',
+  create_at datetime DEFAULT NULL COMMENT '',
+  create_by bigint(20) DEFAULT NULL COMMENT '',
+  update_at datetime DEFAULT NULL COMMENT '',
+  update_by bigint(20) DEFAULT NULL COMMENT '',
+  is_del bit(1) DEFAULT NULL COMMENT '',
+  PRIMARY KEY (id)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
